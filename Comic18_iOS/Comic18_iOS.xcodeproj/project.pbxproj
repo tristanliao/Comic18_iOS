@@ -10,6 +10,7 @@
 		E37B9E23299CC1190097A05C /* HomeCrawlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37B9E22299CC1190097A05C /* HomeCrawlerTests.swift */; };
 		E37B9E25299CDB300097A05C /* comic18_home.html in Resources */ = {isa = PBXBuildFile; fileRef = E37B9E24299CDB2F0097A05C /* comic18_home.html */; };
 		E37B9E28299D1DB00097A05C /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = E37B9E27299D1DB00097A05C /* SwiftSoup */; };
+		E3B85321299E55C0001694D1 /* recent_comics.json in Resources */ = {isa = PBXBuildFile; fileRef = E3B85320299E55C0001694D1 /* recent_comics.json */; };
 		E3B96D68299A486C00F92780 /* Comic18_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B96D67299A486C00F92780 /* Comic18_iOSApp.swift */; };
 		E3B96D6A299A486C00F92780 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B96D69299A486C00F92780 /* ContentView.swift */; };
 		E3B96D6C299A486E00F92780 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B96D6B299A486E00F92780 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		E37B9E22299CC1190097A05C /* HomeCrawlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCrawlerTests.swift; sourceTree = "<group>"; };
 		E37B9E24299CDB2F0097A05C /* comic18_home.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = comic18_home.html; sourceTree = "<group>"; };
+		E3B85320299E55C0001694D1 /* recent_comics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recent_comics.json; sourceTree = "<group>"; };
 		E3B96D64299A486C00F92780 /* Comic18_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Comic18_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B96D67299A486C00F92780 /* Comic18_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic18_iOSApp.swift; sourceTree = "<group>"; };
 		E3B96D69299A486C00F92780 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				E37B9E24299CDB2F0097A05C /* comic18_home.html */,
+				E3B85320299E55C0001694D1 /* recent_comics.json */,
 				E37B9E22299CC1190097A05C /* HomeCrawlerTests.swift */,
 			);
 			path = Crawler;
@@ -262,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3B85321299E55C0001694D1 /* recent_comics.json in Resources */,
 				E37B9E25299CDB300097A05C /* comic18_home.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
