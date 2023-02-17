@@ -103,6 +103,26 @@ class HomeCrawler {
         return comicsJSON
     }
     
+    private func parseLatestComics(from html: String) -> [[String: Any]] {
+        guard let body = try? SwiftSoup.parseBodyFragment(html) else {
+            return []
+        }
+        
+        guard let comicsCategories = try? body.getElementsByClass("row m-0"), !comicsCategories.isEmpty else {
+            return []
+        }
+        
+        guard let recentCategory = try? comicsCategories[0].getElementsByClass("p-b-15") else {
+            return []
+        }
+        
+        let comicsJSON = recentCategory.map { element in
+            return generateComicJSON(from: element)
+        }
+        
+        return comicsJSON
+    }
+    
     private func generateComicJSON(from element: Element) -> [String: Any] {
         var json = [String: Any]()
         json["id"] = try? element.select("a").first()?.attr("href").components(separatedBy: "/")[2]
@@ -152,6 +172,20 @@ class HomeCrawler {
             case let .success(html):
                 let recentComicsJSON = self.parseRecommendComics(from: html)
                 completion(.success(recentComicsJSON))
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func getLatestComics(completion: @escaping (Result<[[String: Any]], Error>) -> Void) {
+        getHomeHTML { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case let .success(html):
+                let latestComicsJSON = self.parseLatestComics(from: html)
+                completion(.success(latestComicsJSON))
             case let .failure(error):
                 completion(.failure(error))
             }
@@ -215,6 +249,26 @@ final class HomeCrawlerTests: XCTestCase {
                 self.XCTAssertEqualComicsJSON(expectedComicsJSON, receivedComicsJSON)
             default:
                 XCTFail("Get recommend comics failed")
+            }
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 5.0)
+    }
+    
+    func test_getLatestComics_deliverItemsOnSuccess() {
+        let sut = makeSUT()
+        let expectedComicsJSON = loadJSON(fileName: "latest_comics")
+        
+        let exp = expectation(description: "Wait for latest comics")
+        
+        sut.getLatestComics() { result in
+            switch result {
+            case let .success(receivedComicsJSON):
+                XCTAssertEqual(receivedComicsJSON.count, 60)
+                self.XCTAssertEqualComicsJSON(expectedComicsJSON, receivedComicsJSON)
+            default:
+                XCTFail("Get latest comics failed")
             }
             exp.fulfill()
         }

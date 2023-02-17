@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E32F71AD299F71BE00CA35C2 /* latest_korean_comics.json in Resources */ = {isa = PBXBuildFile; fileRef = E32F71AC299F71BE00CA35C2 /* latest_korean_comics.json */; };
 		E32F71AF299F78EC00CA35C2 /* recommend_comics.json in Resources */ = {isa = PBXBuildFile; fileRef = E32F71AE299F78EC00CA35C2 /* recommend_comics.json */; };
+		E32F71B1299F7DD700CA35C2 /* latest_comics.json in Resources */ = {isa = PBXBuildFile; fileRef = E32F71B0299F7DD700CA35C2 /* latest_comics.json */; };
 		E37B9E23299CC1190097A05C /* HomeCrawlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37B9E22299CC1190097A05C /* HomeCrawlerTests.swift */; };
 		E37B9E25299CDB300097A05C /* comic18_home.html in Resources */ = {isa = PBXBuildFile; fileRef = E37B9E24299CDB2F0097A05C /* comic18_home.html */; };
 		E37B9E28299D1DB00097A05C /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = E37B9E27299D1DB00097A05C /* SwiftSoup */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		E32F71AC299F71BE00CA35C2 /* latest_korean_comics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = latest_korean_comics.json; sourceTree = "<group>"; };
 		E32F71AE299F78EC00CA35C2 /* recommend_comics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommend_comics.json; sourceTree = "<group>"; };
+		E32F71B0299F7DD700CA35C2 /* latest_comics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = latest_comics.json; sourceTree = "<group>"; };
 		E37B9E22299CC1190097A05C /* HomeCrawlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCrawlerTests.swift; sourceTree = "<group>"; };
 		E37B9E24299CDB2F0097A05C /* comic18_home.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = comic18_home.html; sourceTree = "<group>"; };
 		E3B85320299E55C0001694D1 /* recent_comics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recent_comics.json; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				E3B85320299E55C0001694D1 /* recent_comics.json */,
 				E32F71AC299F71BE00CA35C2 /* latest_korean_comics.json */,
 				E32F71AE299F78EC00CA35C2 /* recommend_comics.json */,
+				E32F71B0299F7DD700CA35C2 /* latest_comics.json */,
 				E37B9E22299CC1190097A05C /* HomeCrawlerTests.swift */,
 			);
 			path = Crawler;
@@ -274,6 +277,7 @@
 				E32F71AF299F78EC00CA35C2 /* recommend_comics.json in Resources */,
 				E3B85321299E55C0001694D1 /* recent_comics.json in Resources */,
 				E37B9E25299CDB300097A05C /* comic18_home.html in Resources */,
+				E32F71B1299F7DD700CA35C2 /* latest_comics.json in Resources */,
 				E32F71AD299F71BE00CA35C2 /* latest_korean_comics.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
