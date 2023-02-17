@@ -94,7 +94,11 @@ final class HomeCrawlerTests: XCTestCase {
     
     private func makeSUT() -> HomeCrawler {
         let html = loadHTML()
-        return HomeCrawler(html: html)
+        let sut = HomeCrawler(html: html)
+        
+        trackMemoryLeak(sut)
+        
+        return sut
     }
     
     private func loadHTML() -> String {
