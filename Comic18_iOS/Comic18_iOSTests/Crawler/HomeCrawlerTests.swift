@@ -57,19 +57,43 @@ class HomeCrawler {
         }
         
         let comicsJSON = recentCategory.map { element in
-            var json = [String: Any]()
-            json["id"] = try? element.select("a").first()?.attr("href").components(separatedBy: "/")[2]
-            json["title"] = try? element.getElementsByClass("video-title").first()?.text()
-            json["authors"] = try? element.getElementsByClass("hidden-xs").first()?.select("a").compactMap { try $0.text() }
-            json["category"] = try? element.getElementsByClass("label-category").first()?.text()
-            json["subCategory"] = try? element.getElementsByClass("label-sub").first()?.text()
-            json["tags"] = try? element.getElementsByClass("tag").compactMap { try $0.text() }
-            json["image"] = try? element.select("img").first()?.attr("data-src")
-            json["likesCount"] = try? element.getElementById("albim_likes_\(json["id"] ?? "")")?.text()
-            return json
+            return generateComicJSON(from: element)
         }
         
         return comicsJSON
+    }
+    
+    private func parseLatestKoreanComics(from html: String) -> [[String: Any]] {
+        guard let body = try? SwiftSoup.parseBodyFragment(html) else {
+            return []
+        }
+        
+        guard let comicsCategories = try? body.getElementsByClass("row m-b-10"), !comicsCategories.isEmpty else {
+            return []
+        }
+        
+        guard let recentCategory = try? comicsCategories[1].getElementsByClass("p-b-15") else {
+            return []
+        }
+        
+        let comicsJSON = recentCategory.map { element in
+            return generateComicJSON(from: element)
+        }
+        
+        return comicsJSON
+    }
+    
+    private func generateComicJSON(from element: Element) -> [String: Any] {
+        var json = [String: Any]()
+        json["id"] = try? element.select("a").first()?.attr("href").components(separatedBy: "/")[2]
+        json["title"] = try? element.getElementsByClass("video-title").first()?.text()
+        json["authors"] = try? element.getElementsByClass("hidden-xs").first()?.select("a").compactMap { try $0.text() }
+        json["category"] = try? element.getElementsByClass("label-category").first()?.text()
+        json["subCategory"] = try? element.getElementsByClass("label-sub").first()?.text()
+        json["tags"] = try? element.getElementsByClass("tag").compactMap { try $0.text() }
+        json["image"] = try? element.select("img").first()?.attr("data-src")
+        json["likesCount"] = try? element.getElementById("albim_likes_\(json["id"] ?? "")")?.text()
+        return json
     }
     
     func getRecentComics(completion: @escaping (Result<[[String: Any]], Error>) -> Void) {
@@ -79,6 +103,20 @@ class HomeCrawler {
             switch result {
             case let .success(html):
                 let recentComicsJSON = self.parseRecentComics(from: html)
+                completion(.success(recentComicsJSON))
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func getLatestKoreanComics(completion: @escaping (Result<[[String: Any]], Error>) -> Void) {
+        getHomeHTML { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case let .success(html):
+                let recentComicsJSON = self.parseLatestKoreanComics(from: html)
                 completion(.success(recentComicsJSON))
             case let .failure(error):
                 completion(.failure(error))
@@ -104,6 +142,26 @@ final class HomeCrawlerTests: XCTestCase {
                 XCTFail("Get wrong recent comics")
             }
             
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 5.0)
+    }
+    
+    func test_getLatestKoreanComics_deliverItemsOnSuccess() {
+        let sut = makeSUT()
+        let expectedComicsJSON = loadJSON(fileName: "latest_korean_comics")
+        
+        let exp = expectation(description: "Wait for latest korean comics")
+        
+        sut.getLatestKoreanComics() { result in
+            switch result {
+            case let .success(receivedComicsJSON):
+                XCTAssertEqual(receivedComicsJSON.count, 20)
+                self.XCTAssertEqualComicsJSON(expectedComicsJSON, receivedComicsJSON)
+            default:
+                XCTFail("Get latest korean comics failed")
+            }
             exp.fulfill()
         }
         
