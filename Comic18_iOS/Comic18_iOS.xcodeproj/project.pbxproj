@@ -16,6 +16,9 @@
 		E37B9E25299CDB300097A05C /* comic18_home.html in Resources */ = {isa = PBXBuildFile; fileRef = E37B9E24299CDB2F0097A05C /* comic18_home.html */; };
 		E37B9E28299D1DB00097A05C /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = E37B9E27299D1DB00097A05C /* SwiftSoup */; };
 		E38D9E6E29A0B72B006819D0 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38D9E6D29A0B72B006819D0 /* URLProtocolStub.swift */; };
+		E38D9E7729A0C1D1006819D0 /* HomeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38D9E7629A0C1D1006819D0 /* HomeLoader.swift */; };
+		E38D9E7A29A0C25C006819D0 /* HomeLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38D9E7929A0C25C006819D0 /* HomeLoaderTests.swift */; };
+		E38D9E7C29A0C79F006819D0 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38D9E7B29A0C79F006819D0 /* SharedTestHelpers.swift */; };
 		E3B85321299E55C0001694D1 /* recent_comics.json in Resources */ = {isa = PBXBuildFile; fileRef = E3B85320299E55C0001694D1 /* recent_comics.json */; };
 		E3B96D68299A486C00F92780 /* Comic18_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B96D67299A486C00F92780 /* Comic18_iOSApp.swift */; };
 		E3B96D6A299A486C00F92780 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B96D69299A486C00F92780 /* ContentView.swift */; };
@@ -52,6 +55,9 @@
 		E37B9E22299CC1190097A05C /* HomeCrawlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCrawlerTests.swift; sourceTree = "<group>"; };
 		E37B9E24299CDB2F0097A05C /* comic18_home.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = comic18_home.html; sourceTree = "<group>"; };
 		E38D9E6D29A0B72B006819D0 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
+		E38D9E7629A0C1D1006819D0 /* HomeLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLoader.swift; sourceTree = "<group>"; };
+		E38D9E7929A0C25C006819D0 /* HomeLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLoaderTests.swift; sourceTree = "<group>"; };
+		E38D9E7B29A0C79F006819D0 /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		E3B85320299E55C0001694D1 /* recent_comics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recent_comics.json; sourceTree = "<group>"; };
 		E3B96D64299A486C00F92780 /* Comic18_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Comic18_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B96D67299A486C00F92780 /* Comic18_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic18_iOSApp.swift; sourceTree = "<group>"; };
@@ -104,6 +110,7 @@
 			children = (
 				E32F71B6299F859600CA35C2 /* XCTestCase+MemoryLeakTracking.swift */,
 				E38D9E6D29A0B72B006819D0 /* URLProtocolStub.swift */,
+				E38D9E7B29A0C79F006819D0 /* SharedTestHelpers.swift */,
 			);
 			path = TestHelpers;
 			sourceTree = "<group>";
@@ -119,6 +126,22 @@
 				E37B9E22299CC1190097A05C /* HomeCrawlerTests.swift */,
 			);
 			path = Crawler;
+			sourceTree = "<group>";
+		};
+		E38D9E7529A0C1BD006819D0 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				E38D9E7629A0C1D1006819D0 /* HomeLoader.swift */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		E38D9E7829A0C241006819D0 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E38D9E7929A0C25C006819D0 /* HomeLoaderTests.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		E3B96D5B299A486C00F92780 = {
@@ -144,6 +167,7 @@
 		E3B96D66299A486C00F92780 /* Comic18_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				E38D9E7529A0C1BD006819D0 /* APIs */,
 				E32F71B2299F803D00CA35C2 /* Crawlers */,
 				E3B96D67299A486C00F92780 /* Comic18_iOSApp.swift */,
 				E3B96D69299A486C00F92780 /* ContentView.swift */,
@@ -164,6 +188,7 @@
 		E3B96D77299A486E00F92780 /* Comic18_iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				E38D9E7829A0C241006819D0 /* API */,
 				E32F71B5299F857C00CA35C2 /* TestHelpers */,
 				E37B9E21299CC0FA0097A05C /* Crawler */,
 				E3B96D78299A486E00F92780 /* Comic18_iOSTests.swift */,
@@ -323,6 +348,7 @@
 			files = (
 				E32F71B4299F804C00CA35C2 /* HomeCrawler.swift in Sources */,
 				E3B96D6A299A486C00F92780 /* ContentView.swift in Sources */,
+				E38D9E7729A0C1D1006819D0 /* HomeLoader.swift in Sources */,
 				E3B96D68299A486C00F92780 /* Comic18_iOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +358,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3B96D79299A486E00F92780 /* Comic18_iOSTests.swift in Sources */,
+				E38D9E7A29A0C25C006819D0 /* HomeLoaderTests.swift in Sources */,
+				E38D9E7C29A0C79F006819D0 /* SharedTestHelpers.swift in Sources */,
 				E37B9E23299CC1190097A05C /* HomeCrawlerTests.swift in Sources */,
 				E32F71B7299F859600CA35C2 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				E38D9E6E29A0B72B006819D0 /* URLProtocolStub.swift in Sources */,

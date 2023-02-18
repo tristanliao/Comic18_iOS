@@ -102,25 +102,14 @@ final class HomeCrawlerTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func makeSUT() -> HomeCrawler {
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> HomeCrawler {
         let sut = HomeCrawler()
-        let htmlData = loadHTML()
+        let htmlData = loadHTML(fileName: "comic18_home")
         URLProtocolStub.stub(data: htmlData, response: anyURLResponse, error: nil)
         
-        trackMemoryLeak(sut)
+        trackMemoryLeak(sut, file: file, line: line)
         
         return sut
-    }
-    
-    private func loadHTML() -> Data? {
-        guard let path = Bundle(for: type(of: self)).path(forResource: "comic18_home", ofType: "html") else { return nil }
-        guard let data = try? Data(contentsOf: URL(filePath: path)) else { return nil }
-        
-        return data
-    }
-    
-    private var anyURLResponse: URLResponse {
-        URLResponse()
     }
     
     private func XCTAssertEqualComicsJSON(_ first: [[String: Any]], _ second: [[String: Any]], file: StaticString = #filePath, line: UInt = #line) {
@@ -136,16 +125,5 @@ final class HomeCrawlerTests: XCTestCase {
             XCTAssertEqual(firstJSON["subCategory"] as? String, secondJSON["subCategory"] as? String, file: file, line: line)
             XCTAssertEqual(firstJSON["likesCount"] as? String, secondJSON["likesCount"] as? String, file: file, line: line)
         }
-    }
-    
-    private func loadJSON(fileName: String, file: StaticString = #filePath, line: UInt = #line) -> [[String: Any]] {
-        guard let path = Bundle(for: type(of: self)).path(forResource: fileName, ofType: "json") else { return [] }
-        guard let data = try? Data(contentsOf: URL(filePath: path)) else { return [] }
-        guard let json = try? JSONSerialization.jsonObject(with: data) as? [[String: Any]] else {
-            XCTFail("Load json file fail", file: file, line: line)
-            return []
-        }
-        
-        return json
     }
 }
