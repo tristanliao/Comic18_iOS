@@ -9,6 +9,16 @@ import XCTest
 import Comic18_iOS
 
 final class HomeCrawlerTests: XCTestCase {
+    override func setUp() {
+        super.setUp()
+        URLProtocolStub.startInterceptingRequest()
+    }
+
+    override func tearDown() {
+        super.tearDown()
+        URLProtocolStub.stopInterceptionRequest()
+    }
+    
     func test_getRecentComics_success() throws {
         let sut = makeSUT()
         let expectedComicsJSON = loadJSON(fileName: "recent_comics")
@@ -93,19 +103,24 @@ final class HomeCrawlerTests: XCTestCase {
     // MARK: - Helpers
     
     private func makeSUT() -> HomeCrawler {
-        let html = loadHTML()
-        let sut = HomeCrawler(html: html)
+        let sut = HomeCrawler()
+        let htmlData = loadHTML()
+        URLProtocolStub.stub(data: htmlData, response: anyURLResponse, error: nil)
         
         trackMemoryLeak(sut)
         
         return sut
     }
     
-    private func loadHTML() -> String {
-        guard let path = Bundle(for: type(of: self)).path(forResource: "comic18_home", ofType: "html") else { return "" }
-        guard let data = try? Data(contentsOf: URL(filePath: path)) else { return "" }
+    private func loadHTML() -> Data? {
+        guard let path = Bundle(for: type(of: self)).path(forResource: "comic18_home", ofType: "html") else { return nil }
+        guard let data = try? Data(contentsOf: URL(filePath: path)) else { return nil }
         
-        return String(data: data, encoding: .utf8) ?? ""
+        return data
+    }
+    
+    private var anyURLResponse: URLResponse {
+        URLResponse()
     }
     
     private func XCTAssertEqualComicsJSON(_ first: [[String: Any]], _ second: [[String: Any]], file: StaticString = #filePath, line: UInt = #line) {

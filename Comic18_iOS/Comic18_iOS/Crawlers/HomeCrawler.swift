@@ -21,9 +21,8 @@ public class HomeCrawler {
         case unexpectedValueRepresentation
     }
     
-    public init(session: URLSession = .shared, html: String? = nil) {
+    public init(session: URLSession = .shared) {
         self.session = session
-        self.homeHTML = html
     }
     
     private func getHomeHTML(completion: @escaping (Result<String, Error>) -> Void) {
