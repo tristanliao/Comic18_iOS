@@ -16,7 +16,7 @@ struct Comic: Equatable {
     let tags: [String]
     let likesCount: String
     let category: String
-    let subCategory: String
+    let subCategory: String?
 }
 
 extension Comic {
@@ -28,7 +28,7 @@ extension Comic {
         tags = json["tags"] as? [String] ?? []
         likesCount = json["likesCount"] as? String ?? ""
         category = json["category"] as? String ?? ""
-        subCategory = json["subCategory"] as? String ?? ""
+        subCategory = json["subCategory"] as? String
     }
 }
 
@@ -50,6 +50,18 @@ final class HomeLoader {
             }
         }
     }
+    
+    func loadLatestKoreanComics(completion: @escaping (Result<[Comic], Error>) -> Void) {
+        crawler.getLatestKoreanComics { result in
+            switch result {
+            case let .success(comicsJSON):
+                let comics = comicsJSON.map { Comic(json: $0) }
+                completion(.success(comics))
+            case .failure:
+                completion(.failure(.connectivity))
+            }
+        }
+    }
 }
 
 final class HomeLoaderTests: XCTestCase {
@@ -62,7 +74,7 @@ final class HomeLoaderTests: XCTestCase {
         URLProtocolStub.stopInterceptionRequest()
     }
 
-    func test_loadRecentComics_deliversItemsOn200HTTPResponseWithJSONItems() throws {
+    func test_loadRecentComics_deliversItemsOn200HTTPResponseWithJSONItems() {
         let sut = makeSUT()
         let json = loadJSON(fileName: "recent_comics")
         let expectedComics = generateComicItems(from: json)
@@ -70,6 +82,27 @@ final class HomeLoaderTests: XCTestCase {
         let exp = expectation(description: "Wait for loading recent comics")
         
         sut.loadRecentComics { result in
+            switch result {
+            case let .success(receivedComics):
+                XCTAssertEqual(expectedComics, receivedComics)
+            default:
+                XCTFail("Transfer recent comic from json to Comics object failed.")
+            }
+            
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 5.0)
+    }
+    
+    func test_loadLatestKoreanComics_deliversItemsOn200HTTPResponseWithJSONItems() {
+        let sut = makeSUT()
+        let json = loadJSON(fileName: "latest_korean_comics")
+        let expectedComics = generateComicItems(from: json)
+        
+        let exp = expectation(description: "Wait for loading latest korean comics")
+        
+        sut.loadLatestKoreanComics { result in
             switch result {
             case let .success(receivedComics):
                 XCTAssertEqual(expectedComics, receivedComics)
@@ -103,7 +136,7 @@ final class HomeLoaderTests: XCTestCase {
                 tags: $0["tags"] as! [String],
                 likesCount: $0["likesCount"] as! String,
                 category: $0["category"] as! String,
-                subCategory: $0["subCategory"] as! String
+                subCategory: $0["subCategory"] as? String
             )
         }
     }
