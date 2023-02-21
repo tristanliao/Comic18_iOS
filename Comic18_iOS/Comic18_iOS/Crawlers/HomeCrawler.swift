@@ -130,8 +130,14 @@ public class HomeCrawler {
         json["category"] = try? element.getElementsByClass("label-category").first()?.text()
         json["subCategory"] = try? element.getElementsByClass("label-sub").first()?.text()
         json["tags"] = try? element.getElementsByClass("tag").compactMap { try $0.text() }
-        json["image"] = try? element.select("img").first()?.attr("data-src")
         json["likesCount"] = try? element.getElementById("albim_likes_\(json["id"] ?? "")")?.text()
+        
+        if let image = try? element.select("img").first()?.attr("data-src"), !image.isEmpty {
+            json["image"] = image
+        } else if let image = try? element.select("img").first()?.attr("data-original"), !image.isEmpty {
+            json["image"] = image
+        }
+        
         return json
     }
     
