@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		E3039E9029A500D9005791CD /* latest_comics.json in Resources */ = {isa = PBXBuildFile; fileRef = E3039E8F29A500D9005791CD /* latest_comics.json */; };
 		E3039E9329A50213005791CD /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3039E9229A50213005791CD /* Comic.swift */; };
+		E3039E9529A5072E005791CD /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3039E9429A5072E005791CD /* MainTabView.swift */; };
+		E3039E9729A50747005791CD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3039E9629A50747005791CD /* HomeView.swift */; };
+		E3039E9929A50751005791CD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3039E9829A50751005791CD /* SettingsView.swift */; };
 		E32F71AD299F71BE00CA35C2 /* latest_korean_comics.json in Resources */ = {isa = PBXBuildFile; fileRef = E32F71AC299F71BE00CA35C2 /* latest_korean_comics.json */; };
 		E32F71AF299F78EC00CA35C2 /* recommend_comics.json in Resources */ = {isa = PBXBuildFile; fileRef = E32F71AE299F78EC00CA35C2 /* recommend_comics.json */; };
 		E32F71B4299F804C00CA35C2 /* HomeCrawler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32F71B3299F804C00CA35C2 /* HomeCrawler.swift */; };
@@ -50,6 +53,9 @@
 /* Begin PBXFileReference section */
 		E3039E8F29A500D9005791CD /* latest_comics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = latest_comics.json; sourceTree = "<group>"; };
 		E3039E9229A50213005791CD /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
+		E3039E9429A5072E005791CD /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		E3039E9629A50747005791CD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E3039E9829A50751005791CD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E32F71AC299F71BE00CA35C2 /* latest_korean_comics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = latest_korean_comics.json; sourceTree = "<group>"; };
 		E32F71AE299F78EC00CA35C2 /* recommend_comics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommend_comics.json; sourceTree = "<group>"; };
 		E32F71B3299F804C00CA35C2 /* HomeCrawler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCrawler.swift; sourceTree = "<group>"; };
@@ -184,6 +190,9 @@
 				E3B96D69299A486C00F92780 /* ContentView.swift */,
 				E3B96D6B299A486E00F92780 /* Assets.xcassets */,
 				E3B96D6D299A486E00F92780 /* Preview Content */,
+				E3039E9429A5072E005791CD /* MainTabView.swift */,
+				E3039E9629A50747005791CD /* HomeView.swift */,
+				E3039E9829A50751005791CD /* SettingsView.swift */,
 			);
 			path = Comic18_iOS;
 			sourceTree = "<group>";
@@ -358,10 +367,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E32F71B4299F804C00CA35C2 /* HomeCrawler.swift in Sources */,
+				E3039E9929A50751005791CD /* SettingsView.swift in Sources */,
+				E3039E9729A50747005791CD /* HomeView.swift in Sources */,
 				E3B96D6A299A486C00F92780 /* ContentView.swift in Sources */,
 				E3039E9329A50213005791CD /* Comic.swift in Sources */,
 				E38D9E7729A0C1D1006819D0 /* HomeLoader.swift in Sources */,
 				E3B96D68299A486C00F92780 /* Comic18_iOSApp.swift in Sources */,
+				E3039E9529A5072E005791CD /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
