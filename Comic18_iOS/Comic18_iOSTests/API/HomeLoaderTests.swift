@@ -62,6 +62,18 @@ final class HomeLoader {
             }
         }
     }
+    
+    func loadRecommendComics(completion: @escaping (Result<[Comic], Error>) -> Void) {
+        crawler.getRecommendComics { result in
+            switch result {
+            case let .success(comicsJSON):
+                let comics = comicsJSON.map { Comic(json: $0) }
+                completion(.success(comics))
+            case .failure:
+                completion(.failure(.connectivity))
+            }
+        }
+    }
 }
 
 final class HomeLoaderTests: XCTestCase {
@@ -103,6 +115,27 @@ final class HomeLoaderTests: XCTestCase {
         let exp = expectation(description: "Wait for loading latest korean comics")
         
         sut.loadLatestKoreanComics { result in
+            switch result {
+            case let .success(receivedComics):
+                XCTAssertEqual(expectedComics, receivedComics)
+            default:
+                XCTFail("Transfer recent comic from json to Comics object failed.")
+            }
+            
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 5.0)
+    }
+    
+    func test_loadRecommendComics_deliversItemsOn200HTTPResponseWithJSONItems() {
+        let sut = makeSUT()
+        let json = loadJSON(fileName: "recommend_comics")
+        let expectedComics = generateComicItems(from: json)
+        
+        let exp = expectation(description: "Wait for loading recommend comics")
+        
+        sut.loadRecommendComics { result in
             switch result {
             case let .success(receivedComics):
                 XCTAssertEqual(expectedComics, receivedComics)
