@@ -7,6 +7,17 @@
 
 import SwiftUI
 
+struct SectionHeaderView: View {
+    let title: String
+    
+    var body: some View {
+        HStack {
+            Text(title)
+            Spacer()
+        }
+    }
+}
+
 struct HomeView: View {
     let homeLoader = HomeLoader()
     var comics: [Comic] = []
@@ -14,40 +25,55 @@ struct HomeView: View {
     @State var latestKoreanComics: [Comic] = []
     @State var recommendComics: [Comic] = []
     @State var latestComics: [Comic] = []
-    let gridItems = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    
+    let gridItems = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
     
     var body: some View {
-        List {
-            Section("連載更新") {
+        NavigationStack {
+            ScrollView {
                 LazyVGrid(columns: gridItems, spacing: 20) {
-                    ForEach(recentComics, id: \.self) { comic in
-                        ComicCellView(comic: comic)
+                    Section(header: SectionHeaderView(title: "連載更新")) {
+                        ForEach(recentComics, id: \.self) { comic in
+                            NavigationLink(value: comic) {
+                                ComicCellView(comic: comic)
+                            }
+                        }
+                    }
+                    
+                    Section(header: SectionHeaderView(title: "最新韓漫")) {
+                        ForEach(latestKoreanComics, id: \.self) { comic in
+                            NavigationLink(value: comic) {
+                                ComicCellView(comic: comic)
+                            }
+                        }
+                    }
+                    
+                    Section(header: SectionHeaderView(title: "推薦")) {
+                        ForEach(recommendComics, id: \.self) { comic in
+                            NavigationLink(value: comic) {
+                                ComicCellView(comic: comic)
+                            }
+                        }
+                    }
+                    
+                    Section(header: SectionHeaderView(title: "最新漫畫")) {
+                        ForEach(latestComics, id: \.self) { comic in
+                            NavigationLink(value: comic) {
+                                ComicCellView(comic: comic)
+                            }
+                        }
                     }
                 }
+                .padding(.init(top: 0, leading: 5, bottom: 0, trailing: 5))
             }
-            
-            Section("最新韓漫") {
-                LazyVGrid(columns: gridItems, spacing: 20) {
-                    ForEach(latestKoreanComics, id: \.self) { comic in
-                        ComicCellView(comic: comic)
-                    }
-                }
-            }
-            
-            Section("推薦") {
-                LazyVGrid(columns: gridItems, spacing: 20) {
-                    ForEach(recommendComics, id: \.self) { comic in
-                        ComicCellView(comic: comic)
-                    }
-                }
-            }
-            
-            Section("最新漫畫") {
-                LazyVGrid(columns: gridItems, spacing: 20) {
-                    ForEach(latestComics, id: \.self) { comic in
-                        ComicCellView(comic: comic)
-                    }
-                }
+            .navigationTitle("首頁")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationDestination(for: Comic.self) { comic in
+                ComicDetailView(comic: comic)
             }
         }
         .onAppear(perform: loadComics)

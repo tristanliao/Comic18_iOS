@@ -16,6 +16,7 @@
 		E32F71AF299F78EC00CA35C2 /* recommend_comics.json in Resources */ = {isa = PBXBuildFile; fileRef = E32F71AE299F78EC00CA35C2 /* recommend_comics.json */; };
 		E32F71B4299F804C00CA35C2 /* HomeCrawler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32F71B3299F804C00CA35C2 /* HomeCrawler.swift */; };
 		E32F71B7299F859600CA35C2 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32F71B6299F859600CA35C2 /* XCTestCase+MemoryLeakTracking.swift */; };
+		E350EDA729AA7C61005B8354 /* ComicDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E350EDA629AA7C61005B8354 /* ComicDetailView.swift */; };
 		E37B9E23299CC1190097A05C /* HomeCrawlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37B9E22299CC1190097A05C /* HomeCrawlerTests.swift */; };
 		E37B9E25299CDB300097A05C /* comic18_home.html in Resources */ = {isa = PBXBuildFile; fileRef = E37B9E24299CDB2F0097A05C /* comic18_home.html */; };
 		E37B9E28299D1DB00097A05C /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = E37B9E27299D1DB00097A05C /* SwiftSoup */; };
@@ -61,6 +62,7 @@
 		E32F71AE299F78EC00CA35C2 /* recommend_comics.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommend_comics.json; sourceTree = "<group>"; };
 		E32F71B3299F804C00CA35C2 /* HomeCrawler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCrawler.swift; sourceTree = "<group>"; };
 		E32F71B6299F859600CA35C2 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		E350EDA629AA7C61005B8354 /* ComicDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailView.swift; sourceTree = "<group>"; };
 		E37B9E22299CC1190097A05C /* HomeCrawlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCrawlerTests.swift; sourceTree = "<group>"; };
 		E37B9E24299CDB2F0097A05C /* comic18_home.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = comic18_home.html; sourceTree = "<group>"; };
 		E38D9E6D29A0B72B006819D0 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				E3039E9629A50747005791CD /* HomeView.swift */,
 				E3039E9829A50751005791CD /* SettingsView.swift */,
 				E3984DDC29A7942F005F9920 /* ComicCellView.swift */,
+				E350EDA629AA7C61005B8354 /* ComicDetailView.swift */,
 			);
 			path = Comic18_iOS;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				E3984DDD29A7942F005F9920 /* ComicCellView.swift in Sources */,
 				E3B96D68299A486C00F92780 /* Comic18_iOSApp.swift in Sources */,
 				E3039E9529A5072E005791CD /* MainTabView.swift in Sources */,
+				E350EDA729AA7C61005B8354 /* ComicDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
