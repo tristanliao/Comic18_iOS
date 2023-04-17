@@ -34,6 +34,8 @@
 		E3B96D79299A486E00F92780 /* Comic18_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B96D78299A486E00F92780 /* Comic18_iOSTests.swift */; };
 		E3B96D83299A486E00F92780 /* Comic18_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B96D82299A486E00F92780 /* Comic18_iOSUITests.swift */; };
 		E3B96D85299A486E00F92780 /* Comic18_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B96D84299A486E00F92780 /* Comic18_iOSUITestsLaunchTests.swift */; };
+		E3E3BE9529DD6768009DDE40 /* comic18_detail_208122.html in Resources */ = {isa = PBXBuildFile; fileRef = E3E3BE9429DD6768009DDE40 /* comic18_detail_208122.html */; };
+		E3F07DA929ED6DF7001A0377 /* comic18_detail_208122.json in Resources */ = {isa = PBXBuildFile; fileRef = E3F07DA829ED6DF7001A0377 /* comic18_detail_208122.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		E3B96D7E299A486E00F92780 /* Comic18_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Comic18_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B96D82299A486E00F92780 /* Comic18_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic18_iOSUITests.swift; sourceTree = "<group>"; };
 		E3B96D84299A486E00F92780 /* Comic18_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic18_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E3E3BE9429DD6768009DDE40 /* comic18_detail_208122.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = comic18_detail_208122.html; sourceTree = "<group>"; };
+		E3F07DA829ED6DF7001A0377 /* comic18_detail_208122.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comic18_detail_208122.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,8 @@
 		E3092F3729AB98500048BC5A /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				E3E3BE9429DD6768009DDE40 /* comic18_detail_208122.html */,
+				E3F07DA829ED6DF7001A0377 /* comic18_detail_208122.json */,
 				E3092F3429AB73B10048BC5A /* DetailCrawlerTests.swift */,
 			);
 			path = Detail;
@@ -369,7 +375,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3F07DA929ED6DF7001A0377 /* comic18_detail_208122.json in Resources */,
 				E32F71AF299F78EC00CA35C2 /* recommend_comics.json in Resources */,
+				E3E3BE9529DD6768009DDE40 /* comic18_detail_208122.html in Resources */,
 				E3B85321299E55C0001694D1 /* recent_comics.json in Resources */,
 				E37B9E25299CDB300097A05C /* comic18_home.html in Resources */,
 				E3039E9029A500D9005791CD /* latest_comics.json in Resources */,
