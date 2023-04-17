@@ -20,7 +20,7 @@ final class HomeLoaderTests: XCTestCase {
 
     func test_loadRecentComics_deliversItemsOn200HTTPResponseWithJSONItems() {
         let sut = makeSUT()
-        let json = loadJSON(fileName: "recent_comics")
+        let json = loadJSONArray(fileName: "recent_comics")
         let expectedComics = generateComicItems(from: json)
         
         let exp = expectation(description: "Wait for loading recent comics")
@@ -41,7 +41,7 @@ final class HomeLoaderTests: XCTestCase {
     
     func test_loadLatestKoreanComics_deliversItemsOn200HTTPResponseWithJSONItems() {
         let sut = makeSUT()
-        let json = loadJSON(fileName: "latest_korean_comics")
+        let json = loadJSONArray(fileName: "latest_korean_comics")
         let expectedComics = generateComicItems(from: json)
         
         let exp = expectation(description: "Wait for loading latest korean comics")
@@ -62,7 +62,7 @@ final class HomeLoaderTests: XCTestCase {
     
     func test_loadRecommendComics_deliversItemsOn200HTTPResponseWithJSONItems() {
         let sut = makeSUT()
-        let json = loadJSON(fileName: "recommend_comics")
+        let json = loadJSONArray(fileName: "recommend_comics")
         let expectedComics = generateComicItems(from: json)
         
         let exp = expectation(description: "Wait for loading recommend comics")
@@ -83,7 +83,7 @@ final class HomeLoaderTests: XCTestCase {
     
     func test_loadLatestComics_deliversItemsOn200HTTPResponseWithJSONItems() {
         let sut = makeSUT()
-        let json = loadJSON(fileName: "latest_comics")
+        let json = loadJSONArray(fileName: "latest_comics")
         let expectedComics = generateComicItems(from: json)
         
         let exp = expectation(description: "Wait for loading recommend comics")

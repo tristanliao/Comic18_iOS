@@ -21,7 +21,7 @@ final class HomeCrawlerTests: XCTestCase {
     
     func test_getRecentComics_success() throws {
         let sut = makeSUT()
-        let expectedComicsJSON = loadJSON(fileName: "recent_comics")
+        let expectedComicsJSON = loadJSONArray(fileName: "recent_comics")
         
         let exp = expectation(description: "Wait for recent comics")
         
@@ -42,7 +42,7 @@ final class HomeCrawlerTests: XCTestCase {
     
     func test_getLatestKoreanComics_deliverItemsOnSuccess() {
         let sut = makeSUT()
-        let expectedComicsJSON = loadJSON(fileName: "latest_korean_comics")
+        let expectedComicsJSON = loadJSONArray(fileName: "latest_korean_comics")
         
         let exp = expectation(description: "Wait for latest korean comics")
         
@@ -62,7 +62,7 @@ final class HomeCrawlerTests: XCTestCase {
     
     func test_getRecommendComics_deliverItemsOnSuccess() {
         let sut = makeSUT()
-        let expectedComicsJSON = loadJSON(fileName: "recommend_comics")
+        let expectedComicsJSON = loadJSONArray(fileName: "recommend_comics")
         
         let exp = expectation(description: "Wait for recommend comics")
         
@@ -82,7 +82,7 @@ final class HomeCrawlerTests: XCTestCase {
     
     func test_getLatestComics_deliverItemsOnSuccess() {
         let sut = makeSUT()
-        let expectedComicsJSON = loadJSON(fileName: "latest_comics")
+        let expectedComicsJSON = loadJSONArray(fileName: "latest_comics")
         
         let exp = expectation(description: "Wait for latest comics")
         
