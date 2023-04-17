@@ -36,6 +36,7 @@
 		E3B96D85299A486E00F92780 /* Comic18_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B96D84299A486E00F92780 /* Comic18_iOSUITestsLaunchTests.swift */; };
 		E3E3BE9529DD6768009DDE40 /* comic18_detail_208122.html in Resources */ = {isa = PBXBuildFile; fileRef = E3E3BE9429DD6768009DDE40 /* comic18_detail_208122.html */; };
 		E3F07DA929ED6DF7001A0377 /* comic18_detail_208122.json in Resources */ = {isa = PBXBuildFile; fileRef = E3F07DA829ED6DF7001A0377 /* comic18_detail_208122.json */; };
+		E3F07DAB29ED7575001A0377 /* DetailCrawler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F07DAA29ED7575001A0377 /* DetailCrawler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		E3B96D84299A486E00F92780 /* Comic18_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic18_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E3E3BE9429DD6768009DDE40 /* comic18_detail_208122.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = comic18_detail_208122.html; sourceTree = "<group>"; };
 		E3F07DA829ED6DF7001A0377 /* comic18_detail_208122.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comic18_detail_208122.json; sourceTree = "<group>"; };
+		E3F07DAA29ED7575001A0377 /* DetailCrawler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCrawler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				E32F71B3299F804C00CA35C2 /* HomeCrawler.swift */,
+				E3F07DAA29ED7575001A0377 /* DetailCrawler.swift */,
 			);
 			path = Crawlers;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3F07DAB29ED7575001A0377 /* DetailCrawler.swift in Sources */,
 				E32F71B4299F804C00CA35C2 /* HomeCrawler.swift in Sources */,
 				E3039E9929A50751005791CD /* SettingsView.swift in Sources */,
 				E3039E9729A50747005791CD /* HomeView.swift in Sources */,
