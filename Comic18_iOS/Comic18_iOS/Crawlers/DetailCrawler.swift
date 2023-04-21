@@ -51,7 +51,7 @@ public class DetailCrawler {
             switch result {
             case let .success(html):
                 completion(.success(self.parse(html: html)))
-            case let.failure(error):
+            case .failure:
                 completion(.failure(.connectivity))
             }
         }
