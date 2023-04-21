@@ -60,13 +60,17 @@ final class DetailCrawlerTests: XCTestCase {
             exp.fulfill()
         }
         
-        wait(for: [exp], timeout: 1.0)
+        wait(for: [exp], timeout: 5.0)
     }
 
     // MARK: - Helpers
     
-    private func makeSUT() -> DetailCrawler {
-        return DetailCrawler(comicID: "208122")
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> DetailCrawler {
+        let crawler = DetailCrawler(comicID: "208122")
+        
+        trackMemoryLeak(crawler, file: file, line: line)
+        
+        return crawler
     }
     
     private var anyNSError: NSError {
