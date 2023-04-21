@@ -10,11 +10,13 @@ import Comic18_iOS
 
 final class HomeLoaderTests: XCTestCase {
 
-    override func setUpWithError() throws {
+    override func setUp() {
+        super.setUp()
         URLProtocolStub.startInterceptingRequest()
     }
 
-    override func tearDownWithError() throws {
+    override func tearDown() {
+        super.tearDown()
         URLProtocolStub.stopInterceptionRequest()
     }
 
