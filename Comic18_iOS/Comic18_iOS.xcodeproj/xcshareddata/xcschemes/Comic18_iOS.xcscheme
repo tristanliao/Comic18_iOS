@@ -30,23 +30,13 @@
       <Testables>
          <TestableReference
             skipped = "NO"
-            parallelizable = "YES">
+            parallelizable = "YES"
+            testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E3B96D73299A486E00F92780"
                BuildableName = "Comic18_iOSTests.xctest"
                BlueprintName = "Comic18_iOSTests"
-               ReferencedContainer = "container:Comic18_iOS.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "YES"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E3B96D7D299A486E00F92780"
-               BuildableName = "Comic18_iOSUITests.xctest"
-               BlueprintName = "Comic18_iOSUITests"
                ReferencedContainer = "container:Comic18_iOS.xcodeproj">
             </BuildableReference>
          </TestableReference>
