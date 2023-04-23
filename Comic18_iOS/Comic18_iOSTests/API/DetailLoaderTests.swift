@@ -133,6 +133,25 @@ final class DetailLoaderTests: XCTestCase {
         
         wait(for: [exp], timeout: 5.0)
     }
+    
+    func test_loadDetail_deliversErrorOnNon200HTTPResponse() {
+        let sut = makeSUT()
+        URLProtocolStub.stub(data: nil, response: nil, error: anyNSError)
+        
+        let exp = expectation(description: "Wait for response")
+        
+        sut.getDetail { result in
+            switch result {
+            case let .failure(receivedError):
+                XCTAssertEqual(receivedError, .connectivity)
+            default:
+                XCTFail("Expect get detail with network error, got \(result) instead.")
+            }
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 5.0)
+    }
 
     // MARK: - Helper methods
     
@@ -144,6 +163,10 @@ final class DetailLoaderTests: XCTestCase {
         trackMemoryLeak(sut)
         
         return sut
+    }
+    
+    private var anyNSError: NSError {
+        NSError(domain: "any error", code: 0)
     }
 
 }
