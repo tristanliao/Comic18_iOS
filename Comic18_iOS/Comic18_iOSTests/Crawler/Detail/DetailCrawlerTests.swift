@@ -77,54 +77,6 @@ final class DetailCrawlerTests: XCTestCase {
         NSError(domain: "any error", code: 0)
     }
     
-    private func makeDetailItemJSON() -> [String: Any] {
-        [
-            "id": 208122,
-            "title": "難得拿到外掛轉生至異世界，就想要隨心所欲過生活 [ブッチャーU×ムンムン×水龍敬] せっかくチートを貰って異世界に転移したんだから、好きなように生きてみたい",
-            "preview_images": [
-                "https://cdn-msp.18comic.vip/media/albums/208122.jpg?v=1678600760",
-                "https://cdn-msp.18comic.vip/media/photos/208122/00018.webp",
-                "https://cdn-msp.18comic.vip/media/photos/208122/00157.webp",
-                "https://cdn-msp.18comic.vip/media/photos/208122/00039.webp"
-            ],
-            "authors": [
-                "ブッチャーU",
-                "ムンムン",
-                "水龍敬"
-            ],
-            "tags": [
-                "巨乳",
-                "妖精",
-                "獸耳",
-                "劇情向",
-                "群交",
-                "中文",
-                "青年漫",
-                "异世界",
-                "ngực",
-                "to"
-            ],
-            "description": """
-                敘述：佐藤太郎是個三十多歲的上班族，職業是建築工地的監工。有一天他因為一場意外而不幸喪命，但是某個疑似是神的存在，賦予他治癒魔法與製作回復藥的外掛能力，並讓他轉生到異世界。
-            我必須戰鬥──跟那些傢伙戰鬥！
-            太郎運用那有如外掛般的卓越能力，不再缺錢花用、生活變得充裕，於是他改名為塔武洛，前往異世界的紅燈區享受花天酒地的生活。於是，在異世界流傳的新傳說就此開幕──或許吧……
-            """,
-            "pages": 1027,
-            "release_date": "2020-08-03",
-            "update_date": "2023-02-26",
-            "watch_count": 10586686,
-            "like_count": "65.8K",
-            "chapters": [
-                [
-                    "id": 208319,
-                    "number": 1,
-                    "title": "難得拿到外掛轉生至異世界，就想要隨心所欲過生活 [ブッチャーU×ムンムン×水龍敬] せっかくチートを貰って異世界に転移したんだから、好きなように生きてみたい",
-                    "release_date": "2020-08-03"
-                ]
-            ]
-        ]
-    }
-    
     private class DetailItem: Equatable {
         let id: String
         let title: String
