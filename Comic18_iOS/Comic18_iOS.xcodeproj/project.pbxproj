@@ -36,6 +36,8 @@
 		E3E3BE9529DD6768009DDE40 /* comic18_detail_208122.html in Resources */ = {isa = PBXBuildFile; fileRef = E3E3BE9429DD6768009DDE40 /* comic18_detail_208122.html */; };
 		E3F07DA929ED6DF7001A0377 /* comic18_detail_208122.json in Resources */ = {isa = PBXBuildFile; fileRef = E3F07DA829ED6DF7001A0377 /* comic18_detail_208122.json */; };
 		E3F07DAB29ED7575001A0377 /* DetailCrawler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F07DAA29ED7575001A0377 /* DetailCrawler.swift */; };
+		E3F591F729F5864C003E827A /* DetailLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F591F629F5864C003E827A /* DetailLoader.swift */; };
+		E3F591F929F5866C003E827A /* ComicDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F591F829F5866C003E827A /* ComicDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		E3E3BE9429DD6768009DDE40 /* comic18_detail_208122.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = comic18_detail_208122.html; sourceTree = "<group>"; };
 		E3F07DA829ED6DF7001A0377 /* comic18_detail_208122.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comic18_detail_208122.json; sourceTree = "<group>"; };
 		E3F07DAA29ED7575001A0377 /* DetailCrawler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCrawler.swift; sourceTree = "<group>"; };
+		E3F591F629F5864C003E827A /* DetailLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLoader.swift; sourceTree = "<group>"; };
+		E3F591F829F5866C003E827A /* ComicDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				E3039E9229A50213005791CD /* Comic.swift */,
+				E3F591F829F5866C003E827A /* ComicDetail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				E38D9E7629A0C1D1006819D0 /* HomeLoader.swift */,
+				E3F591F629F5864C003E827A /* DetailLoader.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -349,9 +355,11 @@
 				E32F71B4299F804C00CA35C2 /* HomeCrawler.swift in Sources */,
 				E3039E9929A50751005791CD /* SettingsView.swift in Sources */,
 				E3039E9729A50747005791CD /* HomeView.swift in Sources */,
+				E3F591F929F5866C003E827A /* ComicDetail.swift in Sources */,
 				E3B96D6A299A486C00F92780 /* ContentView.swift in Sources */,
 				E3039E9329A50213005791CD /* Comic.swift in Sources */,
 				E38D9E7729A0C1D1006819D0 /* HomeLoader.swift in Sources */,
+				E3F591F729F5864C003E827A /* DetailLoader.swift in Sources */,
 				E3984DDD29A7942F005F9920 /* ComicCellView.swift in Sources */,
 				E3B96D68299A486C00F92780 /* Comic18_iOSApp.swift in Sources */,
 				E3039E9529A5072E005791CD /* MainTabView.swift in Sources */,
