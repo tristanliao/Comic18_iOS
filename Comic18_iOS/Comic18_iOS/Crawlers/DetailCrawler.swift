@@ -33,7 +33,8 @@ public class DetailCrawler {
             return
         }
         
-        session.dataTask(with: URL(string: Constants.detailURL)!) { data, response, error in
+        let urlString = "\(Constants.detailURL)/\(comicID)"
+        session.dataTask(with: URL(string: urlString)!) { data, response, error in
             if error != nil {
                 completion(.failure(.connectivity))
             } else if let data = data, let html = String(data: data, encoding: .utf8) {
@@ -67,7 +68,7 @@ public class DetailCrawler {
         var json: [String: Any] = [
             "id": comicID,
             "title" : parseTitle(from: document),
-            "coverImage": parseCoverImage(),
+            "cover_image": parseCoverImage(),
             "preview_images": parsePreviewImages(from: document),
             "authors": parseAuthors(from: document),
             "tags": parseTags(from: document),
