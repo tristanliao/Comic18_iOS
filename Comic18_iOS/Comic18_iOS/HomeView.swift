@@ -73,7 +73,8 @@ struct HomeView: View {
             .navigationTitle("首頁")
             .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: Comic.self) { comic in
-                ComicDetailView(comic: comic)
+                let viewModel = ComicDetailViewModel(comicID: comic.id)
+                ComicDetailView(viewModel: viewModel)
             }
         }
         .onAppear(perform: loadComics)

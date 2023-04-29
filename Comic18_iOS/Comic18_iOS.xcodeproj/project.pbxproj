@@ -18,6 +18,7 @@
 		E32F71B4299F804C00CA35C2 /* HomeCrawler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32F71B3299F804C00CA35C2 /* HomeCrawler.swift */; };
 		E32F71B7299F859600CA35C2 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32F71B6299F859600CA35C2 /* XCTestCase+MemoryLeakTracking.swift */; };
 		E350EDA729AA7C61005B8354 /* ComicDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E350EDA629AA7C61005B8354 /* ComicDetailView.swift */; };
+		E35AB9DD29FD651500A8FEA5 /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = E35AB9DC29FD651500A8FEA5 /* WrappingHStack */; };
 		E37B9E23299CC1190097A05C /* HomeCrawlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37B9E22299CC1190097A05C /* HomeCrawlerTests.swift */; };
 		E37B9E25299CDB300097A05C /* comic18_home.html in Resources */ = {isa = PBXBuildFile; fileRef = E37B9E24299CDB2F0097A05C /* comic18_home.html */; };
 		E37B9E28299D1DB00097A05C /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = E37B9E27299D1DB00097A05C /* SwiftSoup */; };
@@ -34,6 +35,7 @@
 		E3B96D79299A486E00F92780 /* Comic18_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B96D78299A486E00F92780 /* Comic18_iOSTests.swift */; };
 		E3DA6F7A29F2D15200A343D2 /* DetailLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DA6F7929F2D15200A343D2 /* DetailLoaderTests.swift */; };
 		E3E3BE9529DD6768009DDE40 /* comic18_detail_208122.html in Resources */ = {isa = PBXBuildFile; fileRef = E3E3BE9429DD6768009DDE40 /* comic18_detail_208122.html */; };
+		E3E7C5A529FAA3840062E913 /* ComicDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E7C5A429FAA3840062E913 /* ComicDetailViewModel.swift */; };
 		E3F07DA929ED6DF7001A0377 /* comic18_detail_208122.json in Resources */ = {isa = PBXBuildFile; fileRef = E3F07DA829ED6DF7001A0377 /* comic18_detail_208122.json */; };
 		E3F07DAB29ED7575001A0377 /* DetailCrawler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F07DAA29ED7575001A0377 /* DetailCrawler.swift */; };
 		E3F591F729F5864C003E827A /* DetailLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F591F629F5864C003E827A /* DetailLoader.swift */; };
@@ -79,6 +81,7 @@
 		E3B96D78299A486E00F92780 /* Comic18_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic18_iOSTests.swift; sourceTree = "<group>"; };
 		E3DA6F7929F2D15200A343D2 /* DetailLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLoaderTests.swift; sourceTree = "<group>"; };
 		E3E3BE9429DD6768009DDE40 /* comic18_detail_208122.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = comic18_detail_208122.html; sourceTree = "<group>"; };
+		E3E7C5A429FAA3840062E913 /* ComicDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailViewModel.swift; sourceTree = "<group>"; };
 		E3F07DA829ED6DF7001A0377 /* comic18_detail_208122.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comic18_detail_208122.json; sourceTree = "<group>"; };
 		E3F07DAA29ED7575001A0377 /* DetailCrawler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCrawler.swift; sourceTree = "<group>"; };
 		E3F591F629F5864C003E827A /* DetailLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLoader.swift; sourceTree = "<group>"; };
@@ -90,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E35AB9DD29FD651500A8FEA5 /* WrappingHStack in Frameworks */,
 				E37B9E28299D1DB00097A05C /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +219,7 @@
 				E3039E9829A50751005791CD /* SettingsView.swift */,
 				E3984DDC29A7942F005F9920 /* ComicCellView.swift */,
 				E350EDA629AA7C61005B8354 /* ComicDetailView.swift */,
+				E3E7C5A429FAA3840062E913 /* ComicDetailViewModel.swift */,
 			);
 			path = Comic18_iOS;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 			name = Comic18_iOS;
 			packageProductDependencies = (
 				E37B9E27299D1DB00097A05C /* SwiftSoup */,
+				E35AB9DC29FD651500A8FEA5 /* WrappingHStack */,
 			);
 			productName = Comic18_iOS;
 			productReference = E3B96D64299A486C00F92780 /* Comic18_iOS.app */;
@@ -309,6 +315,7 @@
 			mainGroup = E3B96D5B299A486C00F92780;
 			packageReferences = (
 				E37B9E26299D1DB00097A05C /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				E35AB9DB29FD651500A8FEA5 /* XCRemoteSwiftPackageReference "WrappingHStack" */,
 			);
 			productRefGroup = E3B96D65299A486C00F92780 /* Products */;
 			projectDirPath = "";
@@ -354,6 +361,7 @@
 				E3F07DAB29ED7575001A0377 /* DetailCrawler.swift in Sources */,
 				E32F71B4299F804C00CA35C2 /* HomeCrawler.swift in Sources */,
 				E3039E9929A50751005791CD /* SettingsView.swift in Sources */,
+				E3E7C5A529FAA3840062E913 /* ComicDetailViewModel.swift in Sources */,
 				E3039E9729A50747005791CD /* HomeView.swift in Sources */,
 				E3F591F929F5866C003E827A /* ComicDetail.swift in Sources */,
 				E3B96D6A299A486C00F92780 /* ContentView.swift in Sources */,
@@ -634,6 +642,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E35AB9DB29FD651500A8FEA5 /* XCRemoteSwiftPackageReference "WrappingHStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dkk/WrappingHStack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		E37B9E26299D1DB00097A05C /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
@@ -645,6 +661,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E35AB9DC29FD651500A8FEA5 /* WrappingHStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E35AB9DB29FD651500A8FEA5 /* XCRemoteSwiftPackageReference "WrappingHStack" */;
+			productName = WrappingHStack;
+		};
 		E37B9E27299D1DB00097A05C /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E37B9E26299D1DB00097A05C /* XCRemoteSwiftPackageReference "SwiftSoup" */;
